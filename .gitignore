@@ -1,2 +1,12 @@
 # A commit.log nem kell:
 commit.log
+
+# A szokásos szükségtelen LaTeX generálmányok:
+*.aux
+*.log
+*.out
+*.pdf
+*.toc
+
+# Egyelõre nem kell nekünk a magyar.ldf a repóba:
+magyar.ldf
