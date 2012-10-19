@@ -1,0 +1,126 @@
+\documentclass[a4paper,10pt,titlepage]{article}
+% PREUMBULUM
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{a4wide} 
+
+% Használjunk inkább Arial betűtípust:
+%\usepackage{times}
+\renewcommand{\rmdefault}{phv} % Arial
+\renewcommand{\sfdefault}{phv} % Arial
+
+\usepackage[magyar,english]{babel}
+
+% Forráskódoknak:
+\usepackage{listings}
+
+% Tartalomjegyzék:
+\usepackage{tocbibind}
+
+\usepackage[usenames,dvipsnames]{color}
+
+% Hogy legyen képünk:
+\usepackage{graphicx}
+
+%###############################################################################
+\newcommand{\szerzo}{Szerző(k)}
+\newcommand{\szerzomail}{szerzok@email.org}
+\newcommand{\cim}{Cím}
+\newcommand{\targy}{}
+\newcommand{\kulcsszavak}{}
+
+\usepackage{hyperref}
+\hypersetup{
+    unicode=true,
+    colorlinks=true,
+    linkcolor=RoyalBlue,
+    citecolor=RoyalBlue,
+    filecolor=RoyalBlue,
+    urlcolor=RoyalBlue,
+    pdftitle={\cim},        % title
+    pdfauthor={\szerzo},    % author
+    pdfsubject={\targy}, % subject of the document
+    pdfcreator={},   % creator of the document
+    pdfproducer={LaTeX, TexMaker},    % producer of the document
+    pdfkeywords={\kulcsszavak},    % list of keywords
+}
+
+\usepackage{url}
+
+% Táblázatoknak:
+\usepackage{colortbl}
+
+% Ha kell matek:
+\usepackage{amssymb,amsmath}
+
+\usepackage{verbatim} % Hogy lehessen blokkkommentezni
+
+% Egymás melleti képekhez:
+\usepackage{subfig}
+
+\setlength{\parindent}{12pt} % magyar nyelvű dokumentumokban jellemző
+\setlength{\parskip}{0pt}    % magyar nyelvű dokumentumokban jellemző
+
+\usepackage{setspace}  % Ettol a tablazatok, abrak, labjegyzetek maradnak 1-es sorkozzel!
+
+%###########################################
+% Saját eszközök:
+%
+\definecolor{todobgszin}{rgb}{0.64,0.78,0.22}
+\definecolor{todofrszin}{rgb}{0.00,0.50,0.00}
+
+\newcommand{\angolul}[1]{\foreignlanguage{english}{#1}}
+
+\newcommand{\todo}[1]{
+    \vfill
+    \begingroup % Csinálunk egy csoportot, hogy az identálás csak erre vonatkozzon
+        \setlength{\parindent}{0cm} % Beállítjuk, hogy teljes szélességű legyen a dobozunk a bekezdéstől függetlenül
+        \fcolorbox{todofrszin}{todobgszin}{
+            \parbox{\textwidth}{
+                \vskip10pt
+                \leftskip10pt
+                \rightskip10pt
+            
+                \emph{TODO: #1}
+  
+                \vskip10pt
+            }
+        }
+    \endgroup
+    \vfill
+}
+
+\newenvironment{sajat_itemize}
+{
+	\begin{itemize}
+	\setlength{\itemsep}{0pt}
+}
+{
+	\end{itemize}
+}
+
+\begin{document}
+% Dokumentumtörzs
+
+\selectlanguage{magyar}
+
+% Címoldal:
+\begin{titlepage}
+
+\title{\cim}
+\author{\szerzo \\ < \szerzomail >}
+\date{\today}
+
+\end{titlepage}
+\maketitle
+
+% Nem akarom, hogy megjelenjen a tartalomjegyzékben a Tartalomjegyzék:
+\section*{Tartalomjegyzék}
+\makeatletter
+\@starttoc{toc}
+\makeatother
+
+\newpage
+
+\end{document}
