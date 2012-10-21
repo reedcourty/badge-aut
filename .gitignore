@@ -13,3 +13,6 @@ magyar.ldf
 
 # Most még a build scriptre sincs szükség:
 build.py
+
+# Nem akarjuk a neten a Neptun kódokat:
+szerzok.inc

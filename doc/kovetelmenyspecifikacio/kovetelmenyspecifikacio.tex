@@ -20,9 +20,9 @@
 \usepackage{graphicx}
 
 %###############################################################################
-\newcommand{\szerzo}{Szerző(k)}
-\newcommand{\szerzomail}{szerzok@email.org}
-\newcommand{\cim}{Cím}
+\newcommand{\szerzo}{\input{szerzok.inc}}
+\newcommand{\cim}{Hallgatói előrehaladás támogató ''badge'' rendszer \\ Követelményspecifikáció}
+\newcommand{\cimmeta}{Hallgatói előrehaladás támogató ''badge'' rendszer - Követelményspecifikáció}
 \newcommand{\targy}{}
 \newcommand{\kulcsszavak}{}
 
@@ -34,7 +34,7 @@
     citecolor=RoyalBlue,
     filecolor=RoyalBlue,
     urlcolor=RoyalBlue,
-    pdftitle={\cim},        % title
+    pdftitle={\cimmeta},        % title
     pdfauthor={\szerzo},    % author
     pdfsubject={\targy}, % subject of the document
     pdfcreator={},   % creator of the document
@@ -105,7 +105,7 @@
 \begin{titlepage}
 
 \title{\cim}
-\author{\szerzo \\ < \szerzomail >}
+\author{\szerzo}
 \date{\today}
 
 \end{titlepage}
