@@ -10,3 +10,6 @@ commit.log
 
 # Egyelõre nem kell nekünk a magyar.ldf a repóba:
 magyar.ldf
+
+# Most még a build scriptre sincs szükség:
+build.py
