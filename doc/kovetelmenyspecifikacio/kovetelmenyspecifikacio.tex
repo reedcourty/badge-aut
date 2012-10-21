@@ -169,7 +169,13 @@ Az adminisztrátor jogkörébe tartozik új felhasználók felvétele vagy a ré
 
 \section{A rendszer architektúrája}
 
-\todo{Megírni!}
+Webes alkalmazások esetében a háromrétegű architektúrát alkalmazzák. Ez, ahogy azt \aref{fig:3tier_simple}.~ábrán is mutatja, a webszerver, alkalmazásszerver és adatbázisszerver rétegeiből épül fel. Az alkalmazás szerver hivatott az adatbázisszerver által szolgáltatott adatokból előállítani azt a tartalmat, amelyet a webszerver szolgál ki a hozzá kapcsolódó klienseknek.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.50\textwidth]{figures/3tier_simple.png}
+\caption{A hátom rétegű architektúra \label{fig:3tier_simple}}
+\end{figure}
 
 \section{A rendszer által használt kommunikációs protokollok}
 
