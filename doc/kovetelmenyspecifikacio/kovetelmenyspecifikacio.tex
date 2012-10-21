@@ -165,11 +165,13 @@ Az oktató a hallgató használati eseteit is eléri (az oktató a hallgatóból
 
 \subsection{Az adminisztrátor által elérhető különleges funkciók}
 
-Az adminisztrátor jogkörébe tartozik új felhasználók felvétele vagy a régiek törlése, és a felhasználók jogainak/szerepeinek (oktató vagy hallgató státusz beállítása) megadása, ezen kívül az oktatóból származik le, ezért örökli a nála felmerülő használati eseteket is.
+Az adminisztrátor jogkörébe tartozik új felhasználók felvétele vagy a régiek törlése, és a felhasználók jogainak/szerepeinek (oktató vagy hallgató státusz) megadása, ezen kívül az oktatóból származik le, ezért örökli a nála felmerülő használati eseteket is.
 
 \section{A rendszer architektúrája}
 
 Webes alkalmazások esetében a háromrétegű architektúrát alkalmazzák. Ez, ahogy azt \aref{fig:3tier_simple}.~ábrán is mutatja, a webszerver, alkalmazásszerver és adatbázisszerver rétegeiből épül fel. Az alkalmazás szerver hivatott az adatbázisszerver által szolgáltatott adatokból előállítani azt a tartalmat, amelyet a webszerver szolgál ki a hozzá kapcsolódó klienseknek.
+
+A keretrendszer az úgynevezett MVC tervezési mintát követi, ezért a rendszer fejlesztése során is kényszerítve van a minta követése. 
 
 \begin{figure}[ht!]
 \centering
@@ -183,10 +185,10 @@ A rendszer hálózaton keresztül kommunikál a hozzákapcsolódó kliensekkel. 
 
 \section{A rendszer technológiai specifikációja}
 
-A rendszer implementálása Python\footnote{\url{http://python.org}} nyelven, a Django\footnote{\url{https://www.djangoproject.com/}} nevű webes keretrendszer segítségével történik. Ez hivatott az alkalmazás szerver feladatait ellátni.
+A rendszer implementálása Python\footnote{\url{http://python.org}} nyelven (2.7.3-as verzió), a Django\footnote{\url{https://www.djangoproject.com/}} nevű webes keretrendszer (1.4.2-es verzió) segítségével történik. Ez hivatott az alkalmazás szerver feladatait ellátni.
 
-Az adatbázisszerver réteget egy egyszerű, fájl alapú adatbázis megoldás, az SQLite valósítja meg. Természetesen ez teljesítményben alul marad a komolyabb adatbázis-kezelő rendszerekkel szemben, ám alacsony felhasználószám mellett megfelel a célnak. Mivel a választott keretrendszer ORM (Object-relational mapper) megoldást használ, és több adatbázis-kezelőt is támogat{\footnote{PostgreSQL, MySQL, SQLite, Oracle (\url{https://docs.djangoproject.com/en/1.4/ref/databases/})}}, így később a réteget megvalósító adatbázisszerver egyszerűen cserélhető.
+Az adatbázisszerver réteget egy egyszerű, fájl alapú adatbázis megoldás, az SQLite\footnote{\url{http://www.sqlite.org/}} valósítja meg. Természetesen ez teljesítményben alul marad a komolyabb adatbázis-kezelő rendszerekkel szemben, ám alacsony felhasználószám mellett megfelel a célnak. Mivel a választott keretrendszer ORM (Object-relational mapper) megoldást használ, és több adatbázis-kezelőt is támogat{\footnote{PostgreSQL, MySQL, SQLite, Oracle (\url{https://docs.djangoproject.com/en/1.4/ref/databases/})}}, így később a réteget megvalósító adatbázisszerver egyszerűen cserélhető.
 
-A webszerver réteg feladatait a fejlesztés során a keretrendszerbe beépített WSGI alapú fejlesztői szerver, éles üzembe helyezés után Apache webszerver\footnote{\url{http://httpd.apache.org/}} látja el.
+A webszerver réteg feladatait a fejlesztés során a keretrendszerbe beépített WSGI alapú fejlesztői szerver, éles üzembe helyezés után pl. egy Apache webszerver\footnote{\url{http://httpd.apache.org/}} láthatja el.
 
 \end{document}
