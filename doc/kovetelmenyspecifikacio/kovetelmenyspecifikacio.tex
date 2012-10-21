@@ -183,7 +183,11 @@ A rendszer hálózaton keresztül kommunikál a hozzákapcsolódó kliensekkel. 
 
 \section{A rendszer technológiai specifikációja}
 
-\todo{Megírni!}
+A rendszer implementálása Python\footnote{\url{http://python.org}} nyelven, a Django\footnote{\url{https://www.djangoproject.com/}} nevű webes keretrendszer segítségével történik. Ez hivatott az alkalmazás szerver feladatait ellátni.
+
+Az adatbázisszerver réteget egy egyszerű, fájl alapú adatbázis megoldás, az SQLite valósítja meg. Természetesen ez teljesítményben alul marad a komolyabb adatbázis-kezelő rendszerekkel szemben, ám alacsony felhasználószám mellett megfelel a célnak. Mivel a választott keretrendszer ORM (Object-relational mapper) megoldást használ, és több adatbázis-kezelőt is támogat{\footnote{PostgreSQL, MySQL, SQLite, Oracle (\url{https://docs.djangoproject.com/en/1.4/ref/databases/})}}, így később a réteget megvalósító adatbázisszerver egyszerűen cserélhető.
+
+A webszerver réteg feladatait a fejlesztés során a keretrendszerbe beépített WSGI alapú fejlesztői szerver, éles üzembe helyezés után Apache webszerver\footnote{\url{http://httpd.apache.org/}} látja el.
 
 \section{A rendszer felhasználói felületének néhány terve}
 
