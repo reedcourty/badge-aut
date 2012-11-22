@@ -16,3 +16,7 @@ build.py
 
 # Nem akarjuk a neten a Neptun kódokat:
 szerzok.inc
+
+# Eclipse project leírók:
+.project
+.pydevproject
