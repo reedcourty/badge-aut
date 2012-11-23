@@ -50,3 +50,15 @@ class Badge(models.Model):
     nev = models.CharField(max_length=50, verbose_name=u'Név')
     leiras = models.CharField(max_length=200, verbose_name=u'Leírás')
     kep = models.ImageField(upload_to="badge_images")
+    
+    def __unicode__(self):
+        return self.nev
+    
+class Cel(models.Model):
+    rovid_leiras = models.CharField(max_length=50, verbose_name=u'Rövid leírás')
+    leiras = models.CharField(max_length=200, verbose_name=u'Részletes leírás')
+    feladatok = models.ManyToManyField(Feladat)
+    badge = models.ForeignKey(Badge)
+    
+    def __unicode__(self):
+        return self.rovid_leiras
