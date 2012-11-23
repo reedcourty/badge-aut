@@ -1,37 +1,37 @@
 # A commit.log nem kell:
 commit.log
 
-# A szokásos szükségtelen LaTeX generálmányok:
+# A szokÃ¡sos szÃ¼ksÃ©gtelen LaTeX generÃ¡lmÃ¡nyok:
 *.aux
 *.log
 *.out
 *.pdf
 *.toc
 
-# Egyelõre nem kell nekünk a magyar.ldf a repóba:
+# EgyelÅ‘re nem kell nekÃ¼nk a magyar.ldf a repÃ³ba:
 magyar.ldf
 
-# Most még a build scriptre sincs szükség:
+# Most mÃ©g a build scriptre sincs szÃ¼ksÃ©g:
 build.py
 
-# Nem akarjuk a neten a Neptun kódokat:
+# Nem akarjuk a neten a Neptun kÃ³dokat:
 szerzok.inc
 
-# Eclipse project leírók:
+# Eclipse project leÃ­rÃ³k:
 .project
 .pydevproject
 
-# Eclipse beállítások:
+# Eclipse beÃ¡llÃ­tÃ¡sok:
 .settings
 
-# A virtualenv könyvtárat nem commitoljuk:
+# A virtualenv kÃ¶nyvtÃ¡rat nem commitoljuk:
 venv
 
 # Egyebek:
 *.pyc
 
-# A beállításokat nem toljuk fel a repóba:
+# A beÃ¡llÃ­tÃ¡sokat nem toljuk fel a repÃ³ba:
 badge_out/badge_out/settings.py
 
-# Az adatbázis állományra nincs szükség:
+# Az adatbÃ¡zis Ã¡llomÃ¡nyra nincs szÃ¼ksÃ©g:
 badge-out.sqlite
