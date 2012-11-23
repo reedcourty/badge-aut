@@ -12,18 +12,36 @@ SZEREPEK = (
 
 class Tipus(models.Model):
     nev = models.CharField(max_length=50)
+    
+    def __unicode__(self):
+        return self.nev
+    
+    class Meta:
+        verbose_name = u'Típus'
+        verbose_name_plural = u'Típusok'
 
 class Feladat(models.Model):
-    nev = models.CharField(max_length=50)
-    leiras = models.CharField(max_length=200)
-    tipus = models.ForeignKey(Tipus)
+    nev = models.CharField(max_length=100, verbose_name=u'Név')
+    leiras = models.CharField(max_length=200, verbose_name=u'Leírás')
+    tipus = models.ForeignKey(Tipus, verbose_name=u'Típus')
+    
+    def __unicode__(self):
+        return self.nev
+    
+    class Meta:
+        verbose_name = u'Feladat'
+        verbose_name_plural = u'Feladatok'
 
 class Felhasznalo(models.Model):
     user = models.OneToOneField(User)
     nev = models.CharField(max_length=200)
     neptun = models.CharField(max_length=6)
     szerep = models.CharField(max_length=1, choices=SZEREPEK)
-    teljesitett = models.ManyToManyField(Feladat)
-
-
+    teljesitett = models.ManyToManyField(Feladat, blank=True, null=True)
     
+    def __unicode__(self):
+        return u"{0} ({1})".format(self.nev, self.neptun)
+    
+    class Meta:
+        verbose_name = u'Felhasználó'
+        verbose_name_plural = u'Felhasználók'
