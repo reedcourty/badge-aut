@@ -11,4 +11,6 @@ Created on 2012.11.23.
 from badge.models import Felhasznalo, Feladat, Tipus 
 from django.contrib import admin
 
-admin.site.register(Felhasznalo, Feladat, Tipus)
+admin.site.register(Felhasznalo)
+admin.site.register(Feladat)
+admin.site.register(Tipus)
