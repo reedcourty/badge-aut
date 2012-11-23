@@ -24,3 +24,6 @@ szerzok.inc
 # A virtualenv könyvtárat nem commitoljuk:
 venv
 
+# Egyebek:
+*.pyc
+
