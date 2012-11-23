@@ -21,6 +21,9 @@ szerzok.inc
 .project
 .pydevproject
 
+# Eclipse beállítások:
+.settings
+
 # A virtualenv könyvtárat nem commitoljuk:
 venv
 
