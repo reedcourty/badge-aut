@@ -45,3 +45,8 @@ class Felhasznalo(models.Model):
     class Meta:
         verbose_name = u'Felhasználó'
         verbose_name_plural = u'Felhasználók'
+
+class Badge(models.Model):
+    nev = models.CharField(max_length=50, verbose_name=u'Név')
+    leiras = models.CharField(max_length=200, verbose_name=u'Leírás')
+    kep = models.ImageField(upload_to="badge_images")

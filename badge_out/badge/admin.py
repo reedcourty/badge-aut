@@ -8,9 +8,10 @@ Created on 2012.11.23.
 @author: reedcourty
 '''
 
-from badge.models import Felhasznalo, Feladat, Tipus 
+from badge.models import Felhasznalo, Feladat, Tipus, Badge
 from django.contrib import admin
 
 admin.site.register(Felhasznalo)
 admin.site.register(Feladat)
 admin.site.register(Tipus)
+admin.site.register(Badge)
