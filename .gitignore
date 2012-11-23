@@ -35,3 +35,7 @@ badge_out/badge_out/settings.py
 
 # Az adatbázis állományra nincs szükség:
 badge-out.sqlite
+
+# A fixtures-t kihagyjuk:
+badge_out/badge/fixtures/*
+
