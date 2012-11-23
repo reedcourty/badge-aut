@@ -27,3 +27,8 @@ venv
 # Egyebek:
 *.pyc
 
+# A beállításokat nem toljuk fel a repóba:
+badge_out/badge_out/settings.py
+
+# Az adatbázis állományra nincs szükség:
+badge-out.sqlite
