@@ -59,7 +59,7 @@
 <node CREATED="1350472769050" MODIFIED="1350472775822" TEXT="Kaptunk p&#xe9;lda &#xe1;llom&#xe1;nyt"/>
 </node>
 </node>
-<node CREATED="1350471943642" MODIFIED="1350675417945" TEXT="A rendszer k&#xfc;l&#xf6;nb&#xf6;ztessen meg adminisztr&#xe1;tor &#xe9;s hallgat&#xf3; felhaszn&#xe1;l&#xf3;kat. Az adminisztr&#xe1;torok lek&#xe9;rdezhessenek statisztik&#xe1;kat (legal&#xe1;bb 3 grafikon). A hallgat&#xf3;k l&#xe1;thass&#xe1;k a megszerzett &quot;badge&quot;-ket &#xe9;s az el&#xe9;rhet&#x151; tov&#xe1;bbi &quot;badge&quot;-ket, illetve azok felt&#xe9;teleit. A hallgat&#xf3;k nyomtathassanak (pl. PDF) egy saj&#xe1;t profilt, melyen a megszerzett &quot;badge&quot;-ik l&#xe1;that&#xf3;k.">
+<node CREATED="1350471943642" ID="ID_1601696515" MODIFIED="1350675417945" TEXT="A rendszer k&#xfc;l&#xf6;nb&#xf6;ztessen meg adminisztr&#xe1;tor &#xe9;s hallgat&#xf3; felhaszn&#xe1;l&#xf3;kat. Az adminisztr&#xe1;torok lek&#xe9;rdezhessenek statisztik&#xe1;kat (legal&#xe1;bb 3 grafikon). A hallgat&#xf3;k l&#xe1;thass&#xe1;k a megszerzett &quot;badge&quot;-ket &#xe9;s az el&#xe9;rhet&#x151; tov&#xe1;bbi &quot;badge&quot;-ket, illetve azok felt&#xe9;teleit. A hallgat&#xf3;k nyomtathassanak (pl. PDF) egy saj&#xe1;t profilt, melyen a megszerzett &quot;badge&quot;-ik l&#xe1;that&#xf3;k.">
 <node CREATED="1350471984739" MODIFIED="1350471984739" TEXT="A rendszer k&#xfc;l&#xf6;nb&#xf6;ztessen meg adminisztr&#xe1;tor &#xe9;s hallgat&#xf3; felhaszn&#xe1;l&#xf3;kat."/>
 <node CREATED="1350471990117" MODIFIED="1350675417945" TEXT="Admin">
 <node CREATED="1350471984741" MODIFIED="1350675417945" TEXT="Az adminisztr&#xe1;torok lek&#xe9;rdezhessenek statisztik&#xe1;kat (legal&#xe1;bb 3 grafikon).">
@@ -80,7 +80,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1350472347181" MODIFIED="1350675417945" POSITION="left" TEXT="Eszk&#xf6;z&#xf6;k">
+<node CREATED="1350472347181" FOLDED="true" ID="ID_497057076" MODIFIED="1353678142502" POSITION="left" TEXT="Eszk&#xf6;z&#xf6;k">
 <node CREATED="1350472353451" MODIFIED="1350675417955" TEXT="Program nyelv">
 <node CREATED="1350472357111" MODIFIED="1350472361003" TEXT="Python"/>
 <node CREATED="1350472362005" MODIFIED="1350472367244" TEXT="JavaScript"/>
@@ -95,10 +95,10 @@
 </node>
 </node>
 </node>
-<node CREATED="1350472443668" MODIFIED="1350472500383" POSITION="left" TEXT="TODO - Milyen k&#xf6;vetelm&#xe9;nyeknek kell megfelelni?">
+<node CREATED="1350472443668" ID="ID_1468407237" MODIFIED="1350472500383" POSITION="left" TEXT="TODO - Milyen k&#xf6;vetelm&#xe9;nyeknek kell megfelelni?">
 <icon BUILTIN="software-update-available"/>
 </node>
-<node CREATED="1350473145608" MODIFIED="1350675417955" POSITION="left" TEXT="Peti">
+<node CREATED="1350473145608" FOLDED="true" ID="ID_352164120" MODIFIED="1353678139805" POSITION="left" TEXT="Peti">
 <node CREATED="1350473147918" MODIFIED="1350675418123" TEXT="Mail">
 <node CREATED="1350473149900" MODIFIED="1350473175171">
 <richcontent TYPE="NODE"><html>
@@ -116,7 +116,7 @@ hogy a funci&#243;k hogy lesznek el&#233;rhet&#337;k. Ilyesmi kellene.</pre>
 </node>
 </node>
 </node>
-<node CREATED="1350473874129" MODIFIED="1350675418127" POSITION="left" TEXT="Beadand&#xf3;">
+<node CREATED="1350473874129" FOLDED="true" ID="ID_58864999" MODIFIED="1353678135143" POSITION="left" TEXT="Beadand&#xf3;">
 <node CREATED="1350473958203" MODIFIED="1350675418130" TEXT="K&#xf6;vetelm&#xe9;nyspecifik&#xe1;ci&#xf3;">
 <node CREATED="1350473958203" MODIFIED="1350473958203" TEXT="Ebben a p&#xe1;r oldalas dokumentumban ismertetni kell a rendszer funkci&#xf3;it, min&#x151;s&#xe9;gi jellemz&#x151;it, futtat&#xe1;si platformj&#xe1;t, stb. A legfontosabb &#xfc;zenet itt, hogy mit fog tudni a rendszer &#xe9;s milyen form&#xe1;ban."/>
 </node>
@@ -130,7 +130,7 @@ hogy a funci&#243;k hogy lesznek el&#233;rhet&#337;k. Ilyesmi kellene.</pre>
 <node CREATED="1350473958213" MODIFIED="1350473958213" TEXT="Forr&#xe1;s &#xe9;s bin&#xe1;ris form&#xe1;ban a megval&#xf3;s&#xed;tott rendszer."/>
 </node>
 </node>
-<node CREATED="1350474087854" MODIFIED="1350675418136" POSITION="left" TEXT="&#xc9;rt&#xe9;kel&#xe9;s">
+<node CREATED="1350474087854" FOLDED="true" ID="ID_441482195" MODIFIED="1353678120474" POSITION="left" TEXT="&#xc9;rt&#xe9;kel&#xe9;s">
 <node CREATED="1350474091004" MODIFIED="1350675418140" TEXT="K&#xf6;vetelm&#xe9;nyspecifik&#xe1;ci&#xf3;">
 <node CREATED="1350474099436" MODIFIED="1350675418141" TEXT="1 gyenge">
 <node CREATED="1350474099436" MODIFIED="1350474099436" TEXT="ha a specifik&#xe1;ci&#xf3; k&#xf6;vetelm&#xe9;nyeinek nem, vagy csak minim&#xe1;lisan felel meg"/>
@@ -149,10 +149,10 @@ hogy a funci&#243;k hogy lesznek el&#233;rhet&#337;k. Ilyesmi kellene.</pre>
 </node>
 </node>
 </node>
-<node CREATED="1350474178929" MODIFIED="1350675418151" POSITION="left" TEXT="K&#xf6;vetelm&#xe9;nyspecibe kell">
-<node CREATED="1350474195389" MODIFIED="1350474210711" TEXT="3-4 oldalnyi mennyis&#xe9;g/min&#x151;s&#xe9;gi anyag"/>
+<node CREATED="1350474178929" FOLDED="true" ID="ID_206347358" MODIFIED="1353678116977" POSITION="left" TEXT="K&#xf6;vetelm&#xe9;nyspecibe kell">
+<node CREATED="1350474195389" ID="ID_639065386" MODIFIED="1350474210711" TEXT="3-4 oldalnyi mennyis&#xe9;g/min&#x151;s&#xe9;gi anyag"/>
 <node CREATED="1350474227889" MODIFIED="1350474233421" TEXT="Use Case diagramok"/>
-<node CREATED="1350474235659" MODIFIED="1350675418152" TEXT="Architekt&#xfa;ra &#xe1;bra">
+<node CREATED="1350474235659" ID="ID_1396593455" MODIFIED="1350675418152" TEXT="Architekt&#xfa;ra &#xe1;bra">
 <node CREATED="1350474239969" MODIFIED="1350479610448" TEXT="3 r&#xe9;teg&#x171; architekt&#xfa;ra">
 <icon BUILTIN="help-browser"/>
 <icon BUILTIN="software-update-available"/>
@@ -167,7 +167,7 @@ hogy a funci&#243;k hogy lesznek el&#233;rhet&#337;k. Ilyesmi kellene.</pre>
 <icon BUILTIN="help-browser"/>
 </node>
 </node>
-<node CREATED="1350474293997" MODIFIED="1350675418155" TEXT="Technol&#xf3;giai specifik&#xe1;ci&#xf3;">
+<node CREATED="1350474293997" ID="ID_1573339720" MODIFIED="1350675418155" TEXT="Technol&#xf3;giai specifik&#xe1;ci&#xf3;">
 <node CREATED="1350474301907" MODIFIED="1350474308824" TEXT="Ez mi lehet?">
 <icon BUILTIN="help-browser"/>
 </node>
@@ -175,7 +175,7 @@ hogy a funci&#243;k hogy lesznek el&#233;rhet&#337;k. Ilyesmi kellene.</pre>
 <icon BUILTIN="help-browser"/>
 </node>
 </node>
-<node CREATED="1350474335837" MODIFIED="1350675418156" TEXT="Mockup">
+<node CREATED="1350474335837" ID="ID_1381570641" MODIFIED="1350675418156" TEXT="Mockup">
 <node CREATED="1350474338777" MODIFIED="1350474341119" TEXT="Esetleg"/>
 </node>
 </node>
