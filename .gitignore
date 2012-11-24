@@ -40,4 +40,4 @@ badge-out.sqlite
 badge_out/badge/fixtures/*
 
 # Nincs szükség a feltöltött badge képekre:
-badge_out/badge_out/media/badge_images
+badge_out/media/badge_images
