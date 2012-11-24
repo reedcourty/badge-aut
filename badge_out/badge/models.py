@@ -36,6 +36,7 @@ class Badge(models.Model):
     nev = models.CharField(max_length=50, verbose_name=u'Név')
     leiras = models.CharField(max_length=200, verbose_name=u'Leírás')
     kep = models.ImageField(upload_to="badge_images")
+    letrehozta = models.ForeignKey('Felhasznalo', verbose_name=u'Megszerzésére lehetőséget biztosított a badge létrehozásával', related_name='letrehozta')
     
     def kep_link(self):
         return '<img src="/media/{0}"/>'.format(self.kep)
@@ -43,7 +44,7 @@ class Badge(models.Model):
     
     def __unicode__(self):
         return self.nev
-    
+
 class Cel(models.Model):
     rovid_leiras = models.CharField(max_length=50, verbose_name=u'Rövid leírás')
     leiras = models.CharField(max_length=200, verbose_name=u'Részletes leírás')
