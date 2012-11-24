@@ -11,8 +11,11 @@ Created on 2012.11.23.
 from badge.models import Felhasznalo, Feladat, Tipus, Badge, Cel
 from django.contrib import admin
 
+class BadgeAdmin(admin.ModelAdmin):     
+    list_display = ('nev', 'leiras', 'kep_link')
+
 admin.site.register(Felhasznalo)
 admin.site.register(Feladat)
 admin.site.register(Tipus)
-admin.site.register(Badge)
+admin.site.register(Badge, BadgeAdmin)
 admin.site.register(Cel)

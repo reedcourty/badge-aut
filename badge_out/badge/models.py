@@ -37,6 +37,10 @@ class Badge(models.Model):
     leiras = models.CharField(max_length=200, verbose_name=u'Leírás')
     kep = models.ImageField(upload_to="badge_images")
     
+    def kep_link(self):
+        return '<img src="/media/{0}"/>'.format(self.kep)
+    kep_link.allow_tags = True
+    
     def __unicode__(self):
         return self.nev
     
