@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block title %}Bejelentkezés{% endblock %}
+
+{% block content %}
+
+{% if form.errors %}
+<div class="hiba">
+<p>Hibás felhasználói név, vagy jelszó!</p>
+</div>
+{% endif %}
+
+<div id="login_box">
+    <form method="post" action=".">
+    {% csrf_token %}
+        <table id="logintable">
+            <tr>
+                <td>Neptun kód</td>
+                <td>{{ form.username }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.password.label_tag }}</td>
+                <td>{{ form.password }}</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;"><input type="submit" value="Bejelentkezés" /><br />
+                <a href="/accounts/password/reset/">Elfelejtetted a jelszavad?</a></td>
+            </tr>
+        </table>
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+</div>
+
+{% endblock %}

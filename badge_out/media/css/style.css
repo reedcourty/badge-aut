@@ -1,0 +1,151 @@
+/* base color: #973045 */
+
+body {
+    font-family: arial;
+}
+
+h1 {
+    color: #cb5b5b;
+    font-size: 24px;
+}
+
+.hiba p {
+    background-color: pink;
+    border: solid 2px red;
+    padding: 5px;
+    color: red;  
+}
+
+.task {
+    color: #cb5b5b;
+    font-family: arial;
+}
+
+#login_box {
+    background-color: #cb8484;
+    text-align: center;
+    width: 280px;
+    margin: 40px auto;
+    padding: 30px;
+    -moz-box-shadow:    0px 0px 5px 3px #9c4646;
+    -webkit-box-shadow: 0px 0px 5px 3px #9c4646;
+    box-shadow:         0px 0px 5px 3px #9c4646;
+    border: solid 5px #9c4646;
+}
+
+#login_box a:hover {
+    color: #cb5b5b;
+    text-decoration: none;
+}
+
+#logintable {
+    margin: auto;
+}
+
+#logintable input[type=text], #logintable input[type=password] {
+    width: 150px;
+}
+
+#badge_contener {
+    align: center;
+    margin: 20px auto;
+}
+
+#badge_contener h1 {
+    text-align: center;
+}
+
+a.badge #login_badge:hover {
+    text-decoration: none;
+    border: solid 10px #cb5b5b;
+    color: #000000;
+    -moz-box-shadow:    0px 0px 5px 3px #cb5b5b;
+    -webkit-box-shadow: 0px 0px 5px 3px #cb5b5b;
+    box-shadow:         0px 0px 5px 3px #cb5b5b;
+}
+
+#login_badge {
+    margin: 0px auto 20px auto;
+    padding: 5px 5px 5px 5px;
+    width: 200px;
+    height: 50px;
+    background-color: #cb8484;
+    border: solid 10px #9c4646;
+    -moz-box-shadow:    0px 0px 5px 3px #9c4646;
+    -webkit-box-shadow: 0px 0px 5px 3px #9c4646;
+    box-shadow:         0px 0px 5px 3px #9c4646;
+}
+
+.badge_image {
+    float: left;
+    width: 50px;
+    padding: 0px 10px 0px 10px;
+}
+
+a.badge {
+    text-decoration: none;
+    color: #000000;
+    font-family: arial;
+    font-size: 18px;
+}
+
+a.badge #registration_badge:hover {
+    text-decoration: none;
+    border: solid 10px #cb5b5b;
+    color: #000000;
+    -moz-box-shadow:    0px 0px 5px 3px #cb5b5b;
+    -webkit-box-shadow: 0px 0px 5px 3px #cb5b5b;
+    box-shadow:         0px 0px 5px 3px #cb5b5b;
+}
+
+#registration_badge {
+    margin: 0px auto 10px auto;
+    padding: 5px 5px 5px 5px;
+    width: 200px;
+    height: 50px;
+    background-color: #cb8484;
+    border: solid 10px #9c4646;
+    -moz-box-shadow:    0px 0px 5px 3px #9c4646;
+    -webkit-box-shadow: 0px 0px 5px 3px #9c4646;
+    box-shadow:         0px 0px 5px 3px #9c4646;
+}
+
+.first_col {
+    background-color: #cb8484;
+    font-size: 12px;
+}
+
+#targy_table {
+    font-family: arial;
+    font-size: 14px;
+}
+
+#timetable {
+    font-family: arial;
+    border-spacing: 0px;
+    border-left: solid 1px #cb5b5b;
+    border-bottom: solid 1px #cb5b5b;
+}
+
+#timetable tr td {
+    border-right: solid 1px #cb5b5b;
+    border-top: solid 1px #cb5b5b;
+    font-size: 14px;
+    padding: 3px;
+}
+
+#timetable tr th {
+    font-size: 14px;
+    background-color: #cb8484;
+    border-right: solid 1px #cb5b5b;
+    border-top: solid 1px #cb5b5b;
+    padding: 3px;
+}
+
+a {
+    color: #cb5b5b;
+}
+
+a:hover {
+    color: #cb8484;
+}

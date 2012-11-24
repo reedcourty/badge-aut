@@ -1,0 +1,18 @@
+
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block title %}Badge{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+    <script type="text/javascript">
+        window.location="/start"
+    </script>
+{% else %}
+    <a href="/login">Bejelentkezés</a>
+{% endif %}
+
+{% endblock %}
+

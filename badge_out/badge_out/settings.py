@@ -58,7 +58,7 @@ MEDIA_ROOT = PROJECT_PATH + '/../media'
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = ''
+MEDIA_URL = '/media'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -68,7 +68,7 @@ STATIC_ROOT = PROJECT_PATH + '/../static'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/static/'
+STATIC_URL = '/static'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -114,6 +114,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    PROJECT_PATH + "/../template"
 )
 
 INSTALLED_APPS = (
@@ -129,6 +130,8 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'badge',
 )
+
+LOGIN_REDIRECT_URL = "/start"
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
