@@ -21,6 +21,8 @@ urlpatterns = patterns('',
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),
     url(r'^logout/$', 'badge.views.kilepes'),
     url(r'^start/$', 'badge.views.start'),
+    
+    url(r'^stat/oktato-badge/$', 'badge.views.stat_oktato_badge'),
 )
 
 if settings.DEBUG:
