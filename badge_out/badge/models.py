@@ -32,20 +32,6 @@ class Feladat(models.Model):
         verbose_name = u'Feladat'
         verbose_name_plural = u'Feladatok'
 
-class Felhasznalo(models.Model):
-    user = models.OneToOneField(User)
-    nev = models.CharField(max_length=200)
-    neptun = models.CharField(max_length=6)
-    szerep = models.CharField(max_length=1, choices=SZEREPEK)
-    teljesitett = models.ManyToManyField(Feladat, blank=True, null=True)
-    
-    def __unicode__(self):
-        return u"{0} ({1})".format(self.nev, self.neptun)
-    
-    class Meta:
-        verbose_name = u'Felhasználó'
-        verbose_name_plural = u'Felhasználók'
-
 class Badge(models.Model):
     nev = models.CharField(max_length=50, verbose_name=u'Név')
     leiras = models.CharField(max_length=200, verbose_name=u'Leírás')
@@ -62,3 +48,18 @@ class Cel(models.Model):
     
     def __unicode__(self):
         return self.rovid_leiras
+
+class Felhasznalo(models.Model):
+    user = models.OneToOneField(User)
+    nev = models.CharField(max_length=200)
+    neptun = models.CharField(max_length=6)
+    szerep = models.CharField(max_length=1, choices=SZEREPEK)
+    teljesitett = models.ManyToManyField(Feladat, blank=True, null=True)
+    badge = models.ManyToManyField(Badge, blank=True, null=True)
+    
+    def __unicode__(self):
+        return u"{0} ({1})".format(self.nev, self.neptun)
+    
+    class Meta:
+        verbose_name = u'Felhasználó'
+        verbose_name_plural = u'Felhasználók'
