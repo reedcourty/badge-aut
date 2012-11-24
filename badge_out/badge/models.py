@@ -68,3 +68,8 @@ class Felhasznalo(models.Model):
     class Meta:
         verbose_name = u'Felhasználó'
         verbose_name_plural = u'Felhasználók'
+        
+class BadgeTabla(models.Model):
+    felhasznalo = models.ForeignKey(Felhasznalo)
+    badge = models.ForeignKey(Badge)
+    megszerzes_ideje = models.DateTimeField()
