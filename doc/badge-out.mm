@@ -23,9 +23,9 @@
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1350471940100" MODIFIED="1350675417885" POSITION="left" TEXT="Felbontva">
+<node CREATED="1350471940100" ID="ID_1419098216" MODIFIED="1350675417885" POSITION="left" TEXT="Felbontva">
 <node CREATED="1350471943632" MODIFIED="1350471943632" TEXT="Hallgat&#xf3;i el&#x151;rehalad&#xe1;s t&#xe1;mogat&#xf3; &quot;badge&quot; rendszer"/>
-<node CREATED="1350471943642" MODIFIED="1350675417895" TEXT="A rendszer c&#xe9;lja egy olyan webport&#xe1;l, ahol az oktat&#xf3;k felvihetnek &#xfa;gynevezett feladatokat ami lehet egy adott tant&#xe1;rgy, &#xf6;n&#xe1;ll&#xf3; labor, kutat&#xf3;/fejleszt&#x151;i munka stb. A feladatok felvitele mellett az oktat&#xf3;nak legyen lehet&#x151;s&#xe9;ge megfogalmazni c&#xe9;lokat, amelynek el&#xe9;r&#xe9;sekor k&#xfc;l&#xf6;nf&#xe9;le &quot;badge&quot;-t kaphat az adott hallgat&#xf3;. P&#xe9;ld&#xe1;ul ha valaki elv&#xe9;gzett k&#xe9;t mobilos t&#xe1;rgyat legal&#xe1;bb 4-esre akkor automatikusan j&#xe1;r neki a &quot;mobile developer&quot; nev&#x171; badge. Minden &quot;badge&quot; mell&#xe9; sz&#xf6;veges le&#xed;r&#xe1;s &#xe9;s k&#xe9;p is felt&#xf6;lthet&#x151;. T&#xf6;bb badge kombin&#xe1;ci&#xf3;ja egy &#xfa;jabb, nagyobb badge-et is eredm&#xe9;nyezhet. A rendszer t&#xe1;mogassa a hallgat&#xf3;k t&#xe1;rgy-elv&#xe9;gz&#xe9;s&#xe9;nek k&#xf6;nyvel&#xe9;s&#xe9;t Neptun XML-b&#x151;l is.">
+<node CREATED="1350471943642" ID="ID_1441608489" MODIFIED="1350675417895" TEXT="A rendszer c&#xe9;lja egy olyan webport&#xe1;l, ahol az oktat&#xf3;k felvihetnek &#xfa;gynevezett feladatokat ami lehet egy adott tant&#xe1;rgy, &#xf6;n&#xe1;ll&#xf3; labor, kutat&#xf3;/fejleszt&#x151;i munka stb. A feladatok felvitele mellett az oktat&#xf3;nak legyen lehet&#x151;s&#xe9;ge megfogalmazni c&#xe9;lokat, amelynek el&#xe9;r&#xe9;sekor k&#xfc;l&#xf6;nf&#xe9;le &quot;badge&quot;-t kaphat az adott hallgat&#xf3;. P&#xe9;ld&#xe1;ul ha valaki elv&#xe9;gzett k&#xe9;t mobilos t&#xe1;rgyat legal&#xe1;bb 4-esre akkor automatikusan j&#xe1;r neki a &quot;mobile developer&quot; nev&#x171; badge. Minden &quot;badge&quot; mell&#xe9; sz&#xf6;veges le&#xed;r&#xe1;s &#xe9;s k&#xe9;p is felt&#xf6;lthet&#x151;. T&#xf6;bb badge kombin&#xe1;ci&#xf3;ja egy &#xfa;jabb, nagyobb badge-et is eredm&#xe9;nyezhet. A rendszer t&#xe1;mogassa a hallgat&#xf3;k t&#xe1;rgy-elv&#xe9;gz&#xe9;s&#xe9;nek k&#xf6;nyvel&#xe9;s&#xe9;t Neptun XML-b&#x151;l is.">
 <node CREATED="1350472090019" MODIFIED="1350675417895" TEXT="A rendszer c&#xe9;lja egy olyan webport&#xe1;l, ahol az oktat&#xf3;k felvihetnek &#xfa;gynevezett feladatokat ami lehet egy adott tant&#xe1;rgy, &#xf6;n&#xe1;ll&#xf3; labor, kutat&#xf3;/fejleszt&#x151;i munka stb.">
 <node CREATED="1350472099347" MODIFIED="1350675417905" TEXT="Feladat">
 <node CREATED="1350472103303" MODIFIED="1350675417925" TEXT="T&#xf6;bb t&#xed;pus">
@@ -177,6 +177,31 @@ hogy a funci&#243;k hogy lesznek el&#233;rhet&#337;k. Ilyesmi kellene.</pre>
 </node>
 <node CREATED="1350474335837" ID="ID_1381570641" MODIFIED="1350675418156" TEXT="Mockup">
 <node CREATED="1350474338777" MODIFIED="1350474341119" TEXT="Esetleg"/>
+</node>
+</node>
+<node CREATED="1353678337964" ID="ID_222922504" MODIFIED="1353678343041" POSITION="right" TEXT="Modell">
+<node CREATED="1353678343865" ID="ID_356440423" MODIFIED="1353678346226" TEXT="Users">
+<node CREATED="1353678346981" ID="ID_998504679" MODIFIED="1353678938971" TEXT="admin">
+<icon BUILTIN="checkmark_02"/>
+</node>
+<node CREATED="1353678351958" ID="ID_429525292" MODIFIED="1353678353996" TEXT="oktato"/>
+<node CREATED="1353678355051" ID="ID_155676183" MODIFIED="1353678357860" TEXT="hallgato"/>
+<node CREATED="1353678965677" ID="ID_14186228" MODIFIED="1353678971694" TEXT="felhasznalo">
+<node CREATED="1353678972812" ID="ID_761360699" MODIFIED="1353679052225" TEXT="Nev"/>
+<node CREATED="1353679025761" ID="ID_784325477" MODIFIED="1353679031220" TEXT="Neptun"/>
+<node CREATED="1353679015750" ID="ID_464063493" MODIFIED="1353679055947" TEXT="Szerep"/>
+</node>
+</node>
+<node COLOR="#000000" CREATED="1353679164018" ID="ID_1513840078" MODIFIED="1353679222039" TEXT="Feladat">
+<node CREATED="1353679174311" ID="ID_1899365622" MODIFIED="1353679229194" TEXT="Tipus"/>
+</node>
+<node CREATED="1353679188183" ID="ID_507849204" MODIFIED="1353679234076" TEXT="Tipus">
+<node COLOR="#000000" CREATED="1353679196277" ID="ID_1907308215" MODIFIED="1353679206705" TEXT="Nev"/>
+<node CREATED="1353679190851" ID="ID_1257685851" MODIFIED="1353679211786" TEXT="Leiras"/>
+</node>
+<node CREATED="1353679673050" ID="ID_1367735943" MODIFIED="1353679676215" TEXT="Cel">
+<node CREATED="1353679677916" ID="ID_873431235" MODIFIED="1353679683907" TEXT="Feladatok"/>
+<node CREATED="1353679685376" ID="ID_1484466029" MODIFIED="1353679689630" TEXT="Badge"/>
 </node>
 </node>
 </node>
