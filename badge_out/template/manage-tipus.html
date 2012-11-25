@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block title %}Feladattípusok kezelése{% endblock %}
+
+{% block content %}
+
+{% if content.operation == "list" %}
+    <table>
+        {% for tipus in content.tipusok %}
+            <tr>
+                <td>{{ tipus.nev }}</td>
+                <td><a href="{% url 'badge.views.manage_tipusok_edit' tipus.pk %}">Módosítás</a></td>
+                <td><a href="{% url 'badge.views.manage_tipusok_delete' tipus.pk %}">Törlés</a></td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="3"><a href="{% url 'badge.views.manage_tipusok_new' %}">Új típus létrehozása</a></td>
+        </tr>
+    </table>
+{% endif %}
+
+{% if content.operation == "delete" %}
+    {% if content.error %}
+        <div class="hiba">
+            <p>{{ content.error }}</p>
+        </div>
+    {% endif %}
+    
+    <div>Tényleg törli a {{ content.tipus.nev }} típust?
+        <form method="post" action="{% url 'badge.views.manage_tipusok_delete' content.tipus.pk %}">
+        {% csrf_token %}
+            <table>
+                <tr>
+                    <td><input type="submit" value="Igen" name="button" /></td>
+                    <td><input type="submit" value="Nem" name="button" /></td>
+                </tr>
+                <tr><td><a href="{% url 'badge.views.manage_tipusok_list' %}">Vissza</a></td></tr>
+            </table>
+        </form>
+    </div>
+{% endif %}
+
+{% if content.operation == "new" %}
+    {% if content.error %}
+        <div class="hiba">
+            <p>{{ content.error }}</p>
+        </div>
+    {% endif %}
+    
+    <div>
+        <h1>Új típus létrehozása</h1>
+        <form method="post" action="{% url 'badge.views.manage_tipusok_new' %}">
+        {% csrf_token %}
+            <table>
+                <tr>
+                    <td><input type="text" name="nev" /></td>
+                    <td><input type="submit" value="Mentés" /></td>
+                </tr>
+                <tr><td><a href="{% url 'badge.views.manage_tipusok_list' %}">Vissza</a></td></tr>
+            </table>
+        </form>
+    </div>
+{% endif %}
+
+{% if content.operation == "edit" %}
+    {% if content.error %}
+        <div class="hiba">
+            <p>{{ content.error }}</p>
+        </div>
+    {% endif %}
+    
+    <div>
+        <h1>Típus szerkesztése</h1>
+        <form method="post" action="{% url 'badge.views.manage_tipusok_edit' content.tipus.pk %}">
+        {% csrf_token %}
+            <table>
+                <tr>
+                    <td><input type="text" name="nev" value="{{ content.tipus.nev }}"/></td>
+                    <td><input type="submit" value="Mentés" /></td>
+                </tr>
+                <tr><td><a href="{% url 'badge.views.manage_tipusok_list' %}">Vissza</a></td></tr>
+            </table>
+        </form>
+    </div>
+{% endif %}
+
+<a href="{% url 'badge.views.start' %}">Vissza</a>
+
+{% endblock %}

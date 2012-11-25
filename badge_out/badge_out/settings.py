@@ -132,6 +132,7 @@ INSTALLED_APPS = (
 )
 
 LOGIN_REDIRECT_URL = "/start"
+LOGIN_URL = "/login"
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

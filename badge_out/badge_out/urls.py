@@ -23,6 +23,12 @@ urlpatterns = patterns('',
     url(r'^start/$', 'badge.views.start'),
     
     url(r'^stat/oktato-badge/$', 'badge.views.stat_oktato_badge'),
+    
+    url(r'^manage/tipusok/(?P<id>\d+)/edit$', 'badge.views.manage_tipusok_edit'),
+    url(r'^manage/tipusok/(?P<id>\d+)/delete$', 'badge.views.manage_tipusok_delete'),
+    url(r'^manage/tipusok/new$', 'badge.views.manage_tipusok_new'),
+    url(r'^manage/tipusok/$', 'badge.views.manage_tipusok_list'),
+
 )
 
 if settings.DEBUG:
