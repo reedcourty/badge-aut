@@ -158,3 +158,22 @@ def manage_tipusok_delete(request, id):
         return render_to_response('manage-tipus.html',
                                   {'content' : content},
                                   context_instance = RequestContext(request))
+
+@login_required    
+def manage_feladatok_list(request):
+    
+    if (not is_oktato(request)):
+        return HttpResponseRedirect('/start')
+    else:
+    
+        feladatok = Feladat.objects.all()
+        
+        content = {
+            'feladatok' : feladatok,
+            'operation': 'list',
+            'request': request, 
+        }
+        
+        return render_to_response('manage-feladat.html',
+                                  {'content' : content},
+                                  context_instance = RequestContext(request))

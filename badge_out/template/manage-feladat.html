@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block title %}Feladattípusok kezelése{% endblock %}
+
+{% block content %}
+
+{% if content.operation == "list" %}
+    <table>
+        {% for feladat in content.feladatok %}
+            <tr>
+                <td>{{ feladat.nev }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+
+<a href="{% url 'badge.views.start' %}">Vissza</a>
+
+{% endblock %}
