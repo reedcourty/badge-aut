@@ -14,8 +14,60 @@
                 <td>{{ cel.badge }}</td>
             </tr>
         {% endfor %}
+        <tr>
+            <td colspan="3"><a href="{% url 'badge.views.manage_celok_new' %}">Új cél létrehozása</a></td>
+        </tr>
     </table>
     <a href="{% url 'badge.views.start' %}">Vissza</a>
+{% endif %}
+
+{% if content.operation == "new" %}
+    {% if content.error %}
+        <div class="hiba">
+            <p>{{ content.error }}</p>
+        </div>
+    {% endif %}
+    
+    <div>
+        <h1>Új cél létrehozása</h1>
+        <form method="post" action="{% url 'badge.views.manage_celok_new' %}">
+        {% csrf_token %}
+            <table>
+                <tr>
+                    <td><label>Az új cél neve</label><input type="text" name="rovid_leiras" {% if content.cel_form %}value="{{ content.cel_form.rovid_leiras }}"{% endif %}/></td>
+                </tr>
+                <tr>
+                    <td><label>Az új cél leírása</label><input type="text" name="leiras" {% if content.cel_form %}value="{{ content.cel_form.leiras }}"{% endif %}/></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Az új cél teljesítendő feladatai</label>
+                        <table>
+                            {% for feladat in content.feladatok %}
+                                <tr>
+                                    <td><label>{{ feladat.nev }}</label></td>
+                                    <td><input name="feladatok" value="{{ feladat.pk }}" type="checkbox"></td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </td>
+                    <td>
+                        <label>A célhoz kapcsolódó badge</label>
+                        <select name="badge">
+                            <option value="">Válasz egy badge-t!</option>
+                            {% for badge in content.badgeek %}
+                                <option value="{{ badge.pk }}">{{ badge.nev }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Mentés" /></td>
+                </tr>
+                <tr><td><a href="{% url 'badge.views.manage_feladatok_list' %}">Vissza</a></td></tr>
+            </table>
+        </form>
+    </div>
 {% endif %}
 
 {% endblock %}

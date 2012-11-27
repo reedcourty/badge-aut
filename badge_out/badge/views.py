@@ -7,6 +7,7 @@ from django.http import HttpResponseRedirect
 from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.contrib.auth.decorators import login_required
+from django.utils.datastructures import MultiValueDictKeyError
 
 from django.contrib.auth.models import User
 
@@ -293,3 +294,60 @@ def manage_celok_list(request):
         return render_to_response('manage-cel.html',
                                   {'content' : content},
                                   context_instance = RequestContext(request))
+
+@login_required    
+def manage_celok_new(request):
+    
+    if (not is_oktato(request)):
+        return HttpResponseRedirect('/start')
+    else:
+        
+        feladatok = Feladat.objects.all()
+        badgeek = Badge.objects.all()
+        
+        content = {
+            'operation': 'new',
+            'badgeek' : badgeek,
+            'feladatok' : feladatok,
+            'cel_form' : None,
+            'error' : None,
+            'request': request, 
+        }
+        
+        if (request.method == 'POST'):
+            
+            try:
+                rovid_leiras = request.POST['rovid_leiras']
+                leiras = request.POST['leiras']
+                feladatok_checkbox = request.POST.getlist('feladatok')
+                badge_select = request.POST['badge']
+            except MultiValueDictKeyError:
+                feladatok_checkbox = None
+            
+            content['POST'] = request.POST
+            
+            content['cel_form'] = {
+                'rovid_leiras' : rovid_leiras,
+                'leiras' : leiras,
+                'feladatok' : feladatok_checkbox, 
+            }
+            
+            if (rovid_leiras == "") or (leiras == "") or (badge_select == ""):
+                content['error'] = u"Nem adtál meg minden adatot! :("
+            else:
+                badge = Badge.objects.get(pk=badge_select)
+                print(badge)
+                cel = Cel.objects.create(rovid_leiras=rovid_leiras, leiras=leiras, badge=badge)
+                                
+                if (feladatok_checkbox != None):
+                    for feladat_id in feladatok_checkbox:
+                        feladat = Feladat.objects.get(pk=feladat_id)
+                        cel.feladatok.add(feladat)
+                
+                cel.save()
+                return HttpResponseRedirect('/manage/celok/')
+            
+        return render_to_response('manage-cel.html',
+                                  {'content' : content},
+                                  context_instance = RequestContext(request))
+
