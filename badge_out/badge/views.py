@@ -246,3 +246,31 @@ def manage_feladatok_edit(request, id):
         return render_to_response('manage-feladat.html',
                                   {'content' : content},
                                   context_instance = RequestContext(request))
+
+@login_required    
+def manage_feladatok_delete(request, id):
+    
+    if (not is_oktato(request)):
+        return HttpResponseRedirect('/start')
+    else:
+        feladat = Feladat.objects.get(pk=id)
+        
+        content = {
+            'feladat' : feladat,
+            'operation': 'delete',
+            'error' : None,
+            'request': request, 
+        }
+        
+        if (request.method == 'POST'):
+            
+            if (request.POST['button'] == "Nem"):
+                return HttpResponseRedirect('/manage/feladatok/')
+            
+            if (request.POST['button'] == "Igen"):                
+                feladat.delete()
+                return HttpResponseRedirect('/manage/feladatok/')            
+        
+        return render_to_response('manage-feladat.html',
+                                  {'content' : content},
+                                  context_instance = RequestContext(request))

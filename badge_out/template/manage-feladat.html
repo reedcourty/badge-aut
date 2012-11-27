@@ -11,6 +11,7 @@
             <tr>
                 <td>{{ feladat.nev }}</td>
                 <td><a href="{% url 'badge.views.manage_feladatok_edit' feladat.pk %}">Módosítás</a></td>
+                <td><a href="{% url 'badge.views.manage_feladatok_delete' feladat.pk %}">Törlés</a></td>
             </tr>
         {% endfor %}
         <tr>
@@ -100,5 +101,25 @@
     </div>
 {% endif %}
 
+{% if content.operation == "delete" %}
+    {% if content.error %}
+        <div class="hiba">
+            <p>{{ content.error }}</p>
+        </div>
+    {% endif %}
+    
+    <div>Tényleg törli a {{ content.feladat.nev }} feladatot?
+        <form method="post" action="{% url 'badge.views.manage_feladatok_delete' content.feladat.pk %}">
+        {% csrf_token %}
+            <table>
+                <tr>
+                    <td><input type="submit" value="Igen" name="button" /></td>
+                    <td><input type="submit" value="Nem" name="button" /></td>
+                </tr>
+                <tr><td><a href="{% url 'badge.views.manage_feladatok_list' %}">Vissza</a></td></tr>
+            </table>
+        </form>
+    </div>
+{% endif %}
 
 {% endblock %}
