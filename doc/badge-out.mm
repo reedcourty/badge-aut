@@ -212,6 +212,7 @@ hogy a funci&#243;k hogy lesznek el&#233;rhet&#337;k. Ilyesmi kellene.</pre>
 <node CREATED="1354010822392" ID="ID_1365777040" MODIFIED="1354010835224" TEXT="Badge-ek list&#xe1;z&#xe1;sa a hallgat&#xf3;knak"/>
 <node CREATED="1354010851597" ID="ID_1500062971" MODIFIED="1354010869759" TEXT="Megszerzett badge-ek lista nyomtat&#xe1;sa"/>
 <node CREATED="1354010884512" ID="ID_969167421" MODIFIED="1354010889521" TEXT="Neptun XML kezel&#xe9;se"/>
+<node CREATED="1354011257327" ID="ID_1283907228" MODIFIED="1354011275334" TEXT="Badge kioszt&#xe1;s mechanizmus megkre&#xe1;l&#xe1;sa"/>
 </node>
 </node>
 </map>
