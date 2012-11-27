@@ -212,3 +212,37 @@ def manage_feladatok_new(request):
         return render_to_response('manage-feladat.html',
                                   {'content' : content},
                                   context_instance = RequestContext(request))
+
+@login_required    
+def manage_feladatok_edit(request, id):
+    
+    if (not is_oktato(request)):
+        return HttpResponseRedirect('/start')
+    else:
+        feladat = Feladat.objects.get(pk=id)
+        
+        tipusok = Tipus.objects.all()
+        
+        content = {
+            'operation': 'edit',
+            'error' : None,
+            'feladat' : feladat,
+            'tipusok' : tipusok,
+            'request': request, 
+        }
+        
+        if (request.method == 'POST'):
+            
+            if (request.POST['nev'] == "") or (request.POST['leiras'] == "") or (request.POST['tipus'] == ""):
+                content['error'] = u"Nem adtál meg minden adatot! :("
+            else:
+                feladat.nev = request.POST['nev']
+                feladat.leiras = request.POST['leiras']
+                feladat.tipus = Tipus.objects.get(pk=request.POST['tipus'])
+                
+                feladat.save()
+                return HttpResponseRedirect('/manage/feladatok/')
+        
+        return render_to_response('manage-feladat.html',
+                                  {'content' : content},
+                                  context_instance = RequestContext(request))

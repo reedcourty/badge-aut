@@ -10,6 +10,7 @@
         {% for feladat in content.feladatok %}
             <tr>
                 <td>{{ feladat.nev }}</td>
+                <td><a href="{% url 'badge.views.manage_feladatok_edit' feladat.pk %}">Módosítás</a></td>
             </tr>
         {% endfor %}
         <tr>
@@ -57,5 +58,47 @@
         </form>
     </div>
 {% endif %}
+
+{% if content.operation == "edit" %}
+    {% if content.error %}
+        <div class="hiba">
+            <p>{{ content.error }}</p>
+        </div>
+    {% endif %}
+    
+    <div>
+        <h1>Új feladat létrehozása</h1>
+        <form method="post" action="{% url 'badge.views.manage_feladatok_edit' content.feladat.pk %}">
+        {% csrf_token %}
+            <table>
+                <tr>
+                    <td><label>A új feladat neve</label><input type="text" name="nev" value="{{ content.feladat.nev }}"/></td>
+                </tr>
+                <tr>
+                    <td><label>A feladat leírása</label><input type="text" name="leiras" value="{{ content.feladat.leiras }}"/></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>A feladat típusa</label>
+                        <select name="tipus">
+                            {% for tipus in content.tipusok %}
+                                {% if content.feladat.tipus.pk == tipus.pk %}
+                                <option value="{{ tipus.pk }}" selected="selected">{{ tipus.nev }}</option>
+                                {% else %}
+                                <option value="{{ tipus.pk }}">{{ tipus.nev }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Mentés" /></td>
+                </tr>
+                <tr><td><a href="{% url 'badge.views.manage_feladatok_list' %}">Vissza</a></td></tr>
+            </table>
+        </form>
+    </div>
+{% endif %}
+
 
 {% endblock %}
