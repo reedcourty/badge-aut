@@ -205,7 +205,9 @@ hogy a funci&#243;k hogy lesznek el&#233;rhet&#337;k. Ilyesmi kellene.</pre>
 </node>
 </node>
 <node CREATED="1354010509933" ID="ID_1896845793" MODIFIED="1354010516473" POSITION="right" TEXT="Alfeladatok">
-<node COLOR="#000000" CREATED="1354010544617" ID="ID_140622210" MODIFIED="1354010620587" TEXT="Feladatok kezel&#xe9;se oktat&#xf3;k&#xe9;nt"/>
+<node COLOR="#000000" CREATED="1354010544617" ID="ID_140622210" MODIFIED="1354028551113" TEXT="Feladatok kezel&#xe9;se oktat&#xf3;k&#xe9;nt">
+<icon BUILTIN="checkmark_02"/>
+</node>
 <node CREATED="1354010561628" ID="ID_710543753" MODIFIED="1354010613686" TEXT="C&#xe9;lok kezel&#xe9;se oktat&#xf3;k&#xe9;nt"/>
 <node CREATED="1354010585038" ID="ID_1520779512" MODIFIED="1354010606881" TEXT="Badge-ek kezel&#xe9;se oktat&#xf3;k&#xe9;nt"/>
 <node CREATED="1354010810107" ID="ID_747193831" MODIFIED="1354010815619" TEXT="Statisztik&#xe1;k elk&#xe9;sz&#xed;t&#xe9;se"/>
