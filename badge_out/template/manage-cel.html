@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block title %}Célok kezelése{% endblock %}
+
+{% block content %}
+
+{% if content.operation == "list" %}
+    <table>
+        {% for cel in content.celok %}
+            <tr>
+                <td>{{ cel.rovid_leiras }}</td>
+                <td>{{ cel.leiras }}</td>
+                <td>{{ cel.badge }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'badge.views.start' %}">Vissza</a>
+{% endif %}
+
+{% endblock %}

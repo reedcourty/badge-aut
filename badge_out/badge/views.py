@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 
 from django.contrib.auth.models import User
 
-from badge.models import Felhasznalo, Badge, Tipus, Feladat
+from badge.models import Felhasznalo, Badge, Tipus, Feladat, Cel
 
 def kilepes(request):
     logout(request)
@@ -272,5 +272,24 @@ def manage_feladatok_delete(request, id):
                 return HttpResponseRedirect('/manage/feladatok/')            
         
         return render_to_response('manage-feladat.html',
+                                  {'content' : content},
+                                  context_instance = RequestContext(request))
+
+@login_required    
+def manage_celok_list(request):
+    
+    if (not is_oktato(request)):
+        return HttpResponseRedirect('/start')
+    else:
+    
+        celok = Cel.objects.all()
+        
+        content = {
+            'celok' : celok,
+            'operation': 'list',
+            'request': request, 
+        }
+        
+        return render_to_response('manage-cel.html',
                                   {'content' : content},
                                   context_instance = RequestContext(request))

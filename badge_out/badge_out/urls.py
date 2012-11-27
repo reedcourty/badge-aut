@@ -33,6 +33,8 @@ urlpatterns = patterns('',
     url(r'^manage/feladatok/(?P<id>\d+)/delete$', 'badge.views.manage_feladatok_delete'),
     url(r'^manage/feladatok/new$', 'badge.views.manage_feladatok_new'),
     url(r'^manage/feladatok/$', 'badge.views.manage_feladatok_list'),
+    
+    url(r'^manage/celok/$', 'badge.views.manage_celok_list'),
 
 )
 
