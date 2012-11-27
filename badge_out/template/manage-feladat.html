@@ -12,9 +12,50 @@
                 <td>{{ feladat.nev }}</td>
             </tr>
         {% endfor %}
+        <tr>
+            <td colspan="3"><a href="{% url 'badge.views.manage_feladatok_new' %}">Új feladat létrehozása</a></td>
+        </tr>
     </table>
+    <a href="{% url 'badge.views.start' %}">Vissza</a>
 {% endif %}
 
-<a href="{% url 'badge.views.start' %}">Vissza</a>
+{% if content.operation == "new" %}
+    {% if content.error %}
+        <div class="hiba">
+            <p>{{ content.error }}</p>
+        </div>
+    {% endif %}
+    
+    <div>
+        <h1>Új feladat létrehozása</h1>
+        <form method="post" action="{% url 'badge.views.manage_feladatok_new' %}">
+        {% csrf_token %}
+            <table>
+                <tr>
+                    <td><label>Az új feladat neve</label><input type="text" name="nev" /></td>
+                </tr>
+                <tr>
+                    <td><label>Az új feladat leírása</label><input type="text" name="leiras" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Az új feladat típusa</label>
+                        <select name="tipus">
+                            <option value="">Válasz egy típust!</option>
+                            {% for tipus in content.tipusok %}
+                                <option value="{{ tipus.pk }}">{{ tipus.nev }}</option>
+                            {% endfor %}
+                        </select>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Mentés" /></td>
+                </tr>
+                <tr><td><a href="{% url 'badge.views.manage_feladatok_list' %}">Vissza</a></td></tr>
+            </table>
+        </form>
+    </div>
+{% endif %}
 
 {% endblock %}
