@@ -85,6 +85,12 @@
 \setfootline{\todo{•} Gábor}
 \begin{frame}[t]
 \frametitle{A feladat leírása}
+\small
+A rendszer célja egy olyan webportál, ahol az oktatók felvihetnek úgynevezett feladatokat ami lehet egy adott tantárgy, önálló labor, kutató/fejlesztői munka stb. A feladatok felvitele mellett az oktatónak legyen lehetősége megfogalmazni célokat, amelynek elérésekor különféle ''badge''-t kaphat az adott hallgató. Például ha valaki elvégzett két mobilos tárgyat legalább 4-esre akkor automatikusan jár neki a ''mobile developer'' nevű badge. Minden ''badge'' mellé szöveges leírás és kép is feltölthető. Több badge kombinációja egy újabb, nagyobb badge-et is eredményezhet. A rendszer támogassa a hallgatók tárgy-elvégzésének könyvelését Neptun XML-ből is.
+
+A rendszer különböztessen meg adminisztrátor és hallgató felhasználókat. Az adminisztrátorok lekérdezhessenek statisztikákat (legalább 3 grafikon). A hallgatók láthassák a megszerzett ''badge''-ket és az elérhető további ''badge''-ket, illetve azok feltételeit. A hallgatók nyomtathassanak (pl. PDF) egy saját profilt, melyen a megszerzett ''badge''-ik láthatók.
+
+A weboldal feleljen meg a mai modern követelményeknek (AJAX, Form authentikáció stb.).
 \end{frame}
 
 \section{Architektúra - 3 réteg}
@@ -111,18 +117,33 @@
 \setfootline{\todo{•} Gábor}
 \begin{frame}[t]
 \frametitle{Use Case diagram}
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=110mm, keepaspectratio]{figures/use_case.png}
+\end{figure}
 \end{frame}
 
 \section{Python}
 \setfootline{\todo{•} Gyuri}
 \begin{frame}[t]
 \frametitle{Python}
+\begin{itemize}
+\item Egyszerű, könnyen olvasható
+\item Bár szkript nyelv, mégis objektum orientált
+\item Magasszintű, dinamikus adattípusok
+\item Együttműködés más nyelvekkel (C, C++, Java, stb.)
+\end{itemize}
 \end{frame}
 
 \section{Django}
 \setfootline{\todo{•} Gyuri}
 \begin{frame}[t]
 \frametitle{Django}
+\begin{itemize}
+\item MVC architektúrájú Webes keretrendszer
+\item Automatikus admin interfész
+\item ORM
+\end{itemize}
 \end{frame}
 
 \section{Admin felület}
