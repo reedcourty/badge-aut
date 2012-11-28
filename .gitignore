@@ -4,8 +4,10 @@ commit.log
 # A szokásos szükségtelen LaTeX generálmányok:
 *.aux
 *.log
+*.nav
 *.out
 *.pdf
+*.snm
 *.toc
 
 # Egyelőre nem kell nekünk a magyar.ldf a repóba:
