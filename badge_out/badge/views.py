@@ -351,3 +351,76 @@ def manage_celok_new(request):
                                   {'content' : content},
                                   context_instance = RequestContext(request))
 
+
+def set_badge(username):
+    
+    celok = Cel.objects.all()
+    
+    user = User.objects.get(username=username)
+    felhasznalo = Felhasznalo.objects.get(user = user)
+    
+    felhasznalo.badge.clear()
+    
+    for cel in celok:
+        minden_megvan = True
+        cel_feladatai = cel.feladatok.all()
+        for feladat in cel_feladatai:
+            if felhasznalo.teljesitett.filter(pk=feladat.pk):
+                pass
+            else:
+                minden_megvan = False
+                break
+        if minden_megvan:
+            felhasznalo.badge.add(cel.badge)
+            felhasznalo.save()
+        else:
+            felhasznalo.badge.remove(cel.badge)
+            felhasznalo.save()
+
+@login_required    
+def badge_list_all(request):
+    
+    if (is_oktato(request)):
+        return HttpResponseRedirect('/start')
+    else:
+        
+        set_badge(request.user)
+        
+        badge_all = Badge.objects.all()
+    
+        content = {
+            'badge_all' : badge_all,
+            'operation': 'list_all',
+            'request': request, 
+        }
+        
+        return render_to_response('hallgato-badge.html',
+                                  {'content' : content},
+                                  context_instance = RequestContext(request))
+
+@login_required    
+def badge_list_user(request):
+    
+    if (is_oktato(request)):
+        return HttpResponseRedirect('/start')
+    else:
+        
+        set_badge(request.user)
+        
+        badge_all = Badge.objects.all()
+        
+        user = User.objects.get(username=request.user)
+        felhasznalo = Felhasznalo.objects.get(user = user)
+        
+        badge_user = felhasznalo.badge.all()
+    
+        content = {
+            'badge_all' : badge_all,
+            'badge_user' : badge_user,
+            'operation': 'list_user',
+            'request': request, 
+        }
+        
+        return render_to_response('hallgato-badge.html',
+                                  {'content' : content},
+                                  context_instance = RequestContext(request))

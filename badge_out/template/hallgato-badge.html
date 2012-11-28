@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block title %}Badge{% endblock %}
+
+{% block content %}
+
+{% if content.operation == "list_all" %}
+    <h1>Összes elérhető badge</h1>
+    <a href="{% url 'badge.views.badge_list_all' %}">Összes*</a>
+    <a href="{% url 'badge.views.badge_list_user' %}">Saját</a>   
+    <table>
+        
+        {% for badge in content.badge_all %}
+            <tr>
+                <td>{{ badge.nev }}</td>
+                <td>{{ badge.leiras }}</td>
+                <td><img src="/media/{{ badge.kep }}" width="50px"/></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}      
+        
+{% if content.operation == "list_user" %}
+    <h1>Összes megszerzett badge</h1>
+    <a href="{% url 'badge.views.badge_list_all' %}">Összes</a>
+    <a href="{% url 'badge.views.badge_list_user' %}">Saját*</a>   
+    <table>
+        {% for badge in content.badge_user %}
+            <tr>
+                <td>{{ badge.nev }}</td>
+                <td>{{ badge.leiras }}</td>
+                <td><img src="/media/{{ badge.kep }}" width="50px"/></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+    
+<a href="{% url 'badge.views.start' %}">Vissza</a>
+
+{% endblock %}
