@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block title %}Badge-ek kezelése{% endblock %}
+
+{% block content %}
+
+{% if content.operation == "list" %}
+    <table>
+        {% for badge in content.badgeek %}
+            <tr>
+                <td>{{ badge.nev }}</td>
+                <td>{{ badge.leiras }}</td>
+                <td><img src="/media/{{ badge.kep }}" width="50px"/></td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'badge.views.start' %}">Vissza</a>
+{% endif %}
+
+{% endblock %}

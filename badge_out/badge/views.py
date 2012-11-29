@@ -426,3 +426,22 @@ def badge_list_user(request):
         return render_to_response('hallgato-badge.html',
                                   {'content' : content},
                                   context_instance = RequestContext(request))
+        
+@login_required    
+def manage_badge_list(request):
+    
+    if (not is_oktato(request)):
+        return HttpResponseRedirect('/start')
+    else:
+    
+        badgeek = Badge.objects.all()
+        
+        content = {
+            'badgeek' : badgeek,
+            'operation': 'list',
+            'request': request, 
+        }
+        
+        return render_to_response('manage-badge.html',
+                                  {'content' : content},
+                                  context_instance = RequestContext(request))
