@@ -353,6 +353,33 @@ def manage_celok_new(request):
                                   {'content' : content},
                                   context_instance = RequestContext(request))
 
+@login_required    
+def manage_celok_delete(request, id):
+    
+    if (not is_oktato(request)):
+        return HttpResponseRedirect('/start')
+    else:
+        cel = Cel.objects.get(pk=id)
+        
+        content = {
+            'cel' : cel,
+            'operation': 'delete',
+            'error' : None,
+            'request': request, 
+        }
+        
+        if (request.method == 'POST'):
+            
+            if (request.POST['button'] == "Nem"):
+                return HttpResponseRedirect('/manage/celok/')
+            
+            if (request.POST['button'] == "Igen"):                
+                cel.delete()
+                return HttpResponseRedirect('/manage/celok/')            
+        
+        return render_to_response('manage-cel.html',
+                                  {'content' : content},
+                                  context_instance = RequestContext(request))
 
 def set_badge(username):
     

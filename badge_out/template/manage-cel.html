@@ -12,6 +12,7 @@
                 <td>{{ cel.rovid_leiras }}</td>
                 <td>{{ cel.leiras }}</td>
                 <td>{{ cel.badge }}</td>
+                <td><a href="{% url 'badge.views.manage_celok_delete' cel.pk %}">Törlés</a></td>
             </tr>
         {% endfor %}
         <tr>
@@ -64,7 +65,28 @@
                 <tr>
                     <td><input type="submit" value="Mentés" /></td>
                 </tr>
-                <tr><td><a href="{% url 'badge.views.manage_feladatok_list' %}">Vissza</a></td></tr>
+                <tr><td><a href="{% url 'badge.views.manage_celok_list' %}">Vissza</a></td></tr>
+            </table>
+        </form>
+    </div>
+{% endif %}
+
+{% if content.operation == "delete" %}
+    {% if content.error %}
+        <div class="hiba">
+            <p>{{ content.error }}</p>
+        </div>
+    {% endif %}
+    
+    <div>Tényleg törli a {{ content.cel.nev }} célt?
+        <form method="post" action="{% url 'badge.views.manage_celok_delete' content.cel.pk %}">
+        {% csrf_token %}
+            <table>
+                <tr>
+                    <td><input type="submit" value="Igen" name="button" /></td>
+                    <td><input type="submit" value="Nem" name="button" /></td>
+                </tr>
+                <tr><td><a href="{% url 'badge.views.manage_celok_list' %}">Vissza</a></td></tr>
             </table>
         </form>
     </div>
