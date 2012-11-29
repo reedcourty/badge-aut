@@ -17,16 +17,6 @@ def kilepes(request):
     logout(request)
     return HttpResponseRedirect('/')
 
-def start(request):
-    return render_to_response('start.html',
-                              {},
-                              context_instance = RequestContext(request))
-
-def index(request):
-    return render_to_response('index.html',
-                              {},
-                              context_instance = RequestContext(request))
-
 def is_oktato(request):
     user = User.objects.get(username=request.user)
     felhasznalo = Felhasznalo.objects.get(user = user)
@@ -35,6 +25,24 @@ def is_oktato(request):
         return True
     else:
         return False
+
+def start(request):
+    
+    if (is_oktato(request)):
+        szerep = "O"
+    else:
+        szerep = "H"
+    
+    content = {'szerep' : szerep}
+    
+    return render_to_response('start.html',
+                              {'content' : content,},
+                              context_instance = RequestContext(request))
+
+def index(request):
+    return render_to_response('index.html',
+                              {},
+                              context_instance = RequestContext(request))
 
 def stat_oktato_badge(request):
     
