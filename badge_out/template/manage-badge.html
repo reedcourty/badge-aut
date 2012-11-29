@@ -12,6 +12,7 @@
                 <td>{{ badge.nev }}</td>
                 <td>{{ badge.leiras }}</td>
                 <td><img src="/media/{{ badge.kep }}" width="50px"/></td>
+                <td><a href="{% url 'badge.views.manage_badge_edit' badge.pk %}">Módosítás</a></td>
                 <td><a href="{% url 'badge.views.manage_badge_delete' badge.pk %}">Törlés</a></td>
             </tr>
         {% endfor %}
@@ -74,5 +75,41 @@
         </form>
     </div>
 {% endif %}
+
+{% if content.operation == "edit" %}
+    {% if content.error %}
+        <div class="hiba">
+            <p>{{ content.error }}</p>
+        </div>
+    {% endif %}
+    
+    <div>
+        <h1>Badge szerkesztése</h1>
+        <form enctype="multipart/form-data" method="post" action="{% url 'badge.views.manage_badge_edit' content.badge.pk %}">
+        {% csrf_token %}
+            <table>
+                <tr>
+                    <td><label>A badge neve</label><input type="text" name="nev" value="{{ content.badge.nev }}"/></td>
+                </tr>
+                <tr>
+                    <td><label>A badge leírása</label><input type="text" name="leiras" value="{{ content.badge.leiras }}"/></td>
+                </tr>
+                <tr>
+                    <td><img src="/media/{{ content.badge.kep }}" width="50px"/></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>A badge új képe</label><input type="file" name="kep" accept="image/*"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Mentés" /></td>
+                </tr>
+                <tr><td><a href="{% url 'badge.views.manage_badge_list' %}">Vissza</a></td></tr>
+            </table>
+        </form>
+    </div>
+{% endif %}
+
 
 {% endblock %}
