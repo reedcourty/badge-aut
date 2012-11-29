@@ -26,27 +26,6 @@ def index(request):
     return render_to_response('index.html',
                               {},
                               context_instance = RequestContext(request))
- 
-def stat_oktato_badge(request):
-    
-    oktatok = Felhasznalo.objects.filter(szerep='O')
-    badgeek = Badge.objects.all()
-    
-    stat = u'['
-    
-    for oktato in oktatok:
-        count_badge = 0
-        for badge in badgeek:
-            if (badge.letrehozta == oktato):
-                count_badge = count_badge + 1
-        o_stat = u"['{0}',{1}],".format(oktato.nev, count_badge)
-        stat = stat + o_stat
-    stat = stat[0:len(stat)-1] + ']'
-    
-    return render_to_response('stat-oktato-badge.html',
-                              {'stat' : stat},
-                              context_instance = RequestContext(request))
-
 
 def is_oktato(request):
     user = User.objects.get(username=request.user)
@@ -56,6 +35,29 @@ def is_oktato(request):
         return True
     else:
         return False
+
+def stat_oktato_badge(request):
+    
+    if (not is_oktato(request)):
+        return HttpResponseRedirect('/start')
+    else:
+        oktatok = Felhasznalo.objects.filter(szerep='O')
+        badgeek = Badge.objects.all()
+        
+        stat = u'['
+        
+        for oktato in oktatok:
+            count_badge = 0
+            for badge in badgeek:
+                if (badge.letrehozta == oktato):
+                    count_badge = count_badge + 1
+            o_stat = u"['{0}',{1}],".format(oktato.nev, count_badge)
+            stat = stat + o_stat
+        stat = stat[0:len(stat)-1] + ']'
+        
+        return render_to_response('stat-oktato-badge.html',
+                                  {'stat' : stat},
+                                  context_instance = RequestContext(request))
 
 @login_required    
 def manage_tipusok_list(request):
