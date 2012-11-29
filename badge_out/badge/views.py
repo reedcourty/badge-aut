@@ -517,3 +517,39 @@ def manage_badge_new(request):
         return render_to_response('manage-badge.html',
                                   {'content' : content},
                                   context_instance = RequestContext(request))
+
+@login_required    
+def manage_badge_delete(request, id):
+    
+    if (not is_oktato(request)):
+        return HttpResponseRedirect('/start')
+    else:
+        badge = Badge.objects.get(pk=id)
+        
+        content = {
+            'badge' : badge,
+            'operation': 'delete',
+            'error' : None,
+            'request': request, 
+        }
+        
+        if (request.method == 'POST'):
+            
+            if (request.POST['button'] == "Nem"):
+                return HttpResponseRedirect('/manage/badge/')
+            
+            if (request.POST['button'] == "Igen"):                
+                TOROLHETO = True
+                
+                for cel in Cel.objects.all():
+                    if (cel.badge == badge):
+                        TOROLHETO = False
+                        content['error'] = u"Célhoz rendelt badge. Nem törölhető." 
+                
+                if TOROLHETO:
+                    badge.delete()
+                    return HttpResponseRedirect('/manage/badge/')            
+        
+        return render_to_response('manage-badge.html',
+                                  {'content' : content},
+                                  context_instance = RequestContext(request))
