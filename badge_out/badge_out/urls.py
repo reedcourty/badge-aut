@@ -38,6 +38,7 @@ urlpatterns = patterns('',
     url(r'^manage/celok/new$', 'badge.views.manage_celok_new'),
     url(r'^manage/celok/$', 'badge.views.manage_celok_list'),
     
+    url(r'^manage/badge/new$', 'badge.views.manage_badge_new'),
     url(r'^manage/badge/$', 'badge.views.manage_badge_list'),
     
     url(r'^badge/all$', 'badge.views.badge_list_all'),

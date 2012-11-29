@@ -472,3 +472,48 @@ def manage_badge_list(request):
         return render_to_response('manage-badge.html',
                                   {'content' : content},
                                   context_instance = RequestContext(request))
+
+@login_required    
+def manage_badge_new(request):
+    
+    if (not is_oktato(request)):
+        return HttpResponseRedirect('/start')
+    else:        
+        content = {
+            'operation': 'new',
+            'badge_form' : None,
+            'error' : None,
+            'request': request, 
+        }
+        
+        if (request.method == 'POST'):
+            
+            nev = request.POST['nev']
+            leiras = request.POST['leiras']
+            kep = request.FILES['kep']
+            
+            content['POST'] = request.POST
+            content['FILES'] = request.FILES
+            
+            content['badge_form'] = {
+                'nev' : nev,
+                'leiras' : leiras,
+                'kep' : kep
+            }
+            
+            if (nev == "") or (leiras == ""):
+                content['error'] = u"Nem adtál meg minden adatot! :("
+            else:
+                
+                user = User.objects.get(username=request.user)
+                letrehozta = Felhasznalo.objects.get(user = user)
+
+                badge = Badge.objects.create(nev=nev, leiras=leiras, letrehozta=letrehozta)
+                badge.kep.save(kep.name, kep)
+                                
+                badge.save()
+                return HttpResponseRedirect('/manage/badge/')
+            
+        return render_to_response('manage-badge.html',
+                                  {'content' : content},
+                                  context_instance = RequestContext(request))
